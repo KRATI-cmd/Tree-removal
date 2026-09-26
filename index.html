@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>24/7 Emergency Tree Removal &amp; Storm Damage Cleanup | Ironwood Tree &amp; Storm</title>
+    <meta name="description" content="Tree on your house or power lines? 24/7 emergency tree removal, crane operations, certified arborists and direct insurance billing. Call (555) TREE-NOW." />
+    <meta name="theme-color" content="#082308" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet" />
+    <!-- Loader styles are inlined so it paints before the JS bundle arrives. Removed by src/lib/loader.js. -->
+    <style>
+      #app-loader {
+        position: fixed; inset: 0; z-index: 100;
+        display: flex; flex-direction: column; align-items: center; justify-content: center;
+        background: radial-gradient(ellipse at 50% 35%, rgba(249,115,22, 0.16), transparent 60%), #0f380f;
+        color: #fff; font-family: Montserrat, Inter, system-ui, sans-serif;
+        transition: opacity 0.5s ease 0.15s, visibility 0.5s ease 0.15s;
+        overflow: hidden;
+        /* Failsafe: disappears on its own if the JS bundle never runs */
+        animation: ldr-failsafe 0.5s ease 6s forwards;
+      }
+      #app-loader.is-done { opacity: 0; visibility: hidden; }
+      #app-loader.is-done .ldr-inner { transform: scale(1.06); }
+      #app-loader::before {
+        content: ""; position: absolute; inset: -50% -10%;
+        background: repeating-linear-gradient(105deg, transparent 0 22px, rgba(188, 212, 230, 0.07) 22px 23px);
+        animation: ldr-rain 0.6s linear infinite;
+      }
+      .ldr-inner { position: relative; display: flex; flex-direction: column; align-items: center; transition: transform 0.6s ease; }
+      .ldr-mark { width: 88px; height: 88px; }
+      .ldr-mark .tree {
+        fill: #fb923c; fill-opacity: 0; stroke: #fb923c; stroke-width: 2; stroke-linejoin: round;
+        stroke-dasharray: 230; stroke-dashoffset: 230;
+        animation: ldr-draw 1.1s ease forwards, ldr-fill 0.4s ease 0.9s forwards;
+      }
+      .ldr-mark .frame { fill: none; stroke: rgba(255, 255, 255, 0.14); stroke-width: 1.5; }
+      .ldr-brand { margin: 18px 0 0; font-size: 22px; font-weight: 900; letter-spacing: 0.02em; line-height: 1; }
+      .ldr-brand span { display: block; margin-top: 6px; font-size: 10px; font-weight: 800; letter-spacing: 0.28em; color: #fbbf24; text-align: center; }
+      .ldr-bar { position: relative; width: 180px; height: 4px; margin-top: 26px; border-radius: 99px; background: rgba(255, 255, 255, 0.12); overflow: hidden; }
+      .ldr-bar span {
+        position: absolute; inset: 0 auto 0 0; width: 40%; border-radius: inherit;
+        background: linear-gradient(90deg, #fb923c, #ea580c);
+        animation: ldr-slide 1.1s ease-in-out infinite;
+      }
+      #app-loader.is-done .ldr-bar span { animation: none; width: 100%; transition: width 0.2s ease; }
+      .ldr-text { margin: 14px 0 0; font: 500 13px/1.4 Inter, system-ui, sans-serif; color: rgba(220, 239, 220, 0.7); }
+      .ldr-call {
+        position: absolute; bottom: max(28px, env(safe-area-inset-bottom)); left: 50%; transform: translateX(-50%);
+        white-space: nowrap; padding: 12px 20px; border-radius: 12px;
+        background: #ea580c; color: #fff; text-decoration: none;
+        font: 800 14px/1 Montserrat, Inter, system-ui, sans-serif; letter-spacing: 0.03em; text-transform: uppercase;
+        box-shadow: 0 10px 30px rgba(234, 88, 12, 0.35);
+      }
+      @keyframes ldr-failsafe { to { opacity: 0; visibility: hidden; } }
+      @keyframes ldr-draw { to { stroke-dashoffset: 0; } }
+      @keyframes ldr-fill { to { fill-opacity: 1; } }
+      @keyframes ldr-slide { 0% { transform: translateX(-100%); } 100% { transform: translateX(250%); } }
+      @keyframes ldr-rain { to { transform: translate(-8px, 46px); } }
+      @media (prefers-reduced-motion: reduce) {
+        #app-loader::before, .ldr-bar span { animation: none; }
+        .ldr-mark .tree { animation: none; stroke-dashoffset: 0; fill-opacity: 1; }
+      }
+    </style>
+  </head>
+  <body class="bg-forest-950 font-sans text-forest-50 antialiased">
+    <div id="app-loader" role="status" aria-label="Loading Ironwood Tree &amp; Storm">
+      <div class="ldr-inner">
+        <svg class="ldr-mark" viewBox="0 0 64 64" aria-hidden="true">
+          <rect class="frame" x="2" y="2" width="60" height="60" rx="14" />
+          <path class="tree" d="M32 9 18 29h7L14 45h13v9h10v-9h13L39 29h7z" />
+        </svg>
+        <p class="ldr-brand">IRONWOOD<span>TREE &amp; STORM</span></p>
+        <div class="ldr-bar" aria-hidden="true"><span></span></div>
+        <p class="ldr-text">Readying your rapid-response crew…</p>
+      </div>
+      <a class="ldr-call" href="tel:+15558733669">🚨 Emergency? Call (555) TREE-NOW</a>
+    </div>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
